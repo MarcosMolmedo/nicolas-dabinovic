@@ -1,0 +1,114 @@
+.section {
+  padding-block: 4.5rem;
+  background-color: var(--color-white);
+}
+
+.heading {
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.75rem, 7vw, 4rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin-top: 0.6rem;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.step {
+  text-align: center;
+}
+
+.number {
+  display: block;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.step h3 {
+  margin-top: 0.4rem;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.step p {
+  max-width: 17rem;
+  margin: 0.6rem auto 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.arrow {
+  display: block;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-heading), serif;
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+
+  transform: rotate(90deg);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 4.25rem 5rem;
+  }
+
+  .steps {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr);
+
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
+    margin-top: 3.25rem;
+  }
+
+  .step {
+    min-height: 11rem;
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+    transform: none;
+  }
+}

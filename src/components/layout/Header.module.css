@@ -1,0 +1,108 @@
+.header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--color-background);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5.5rem;
+  gap: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: var(--color-heading);
+  line-height: 0.8;
+}
+
+.logoName,
+.logoSurname {
+  font-family: var(--font-heading), serif;
+}
+
+.logoName {
+  font-size: 1.65rem;
+  font-weight: 500;
+}
+
+.logoSurname {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.navigation {
+  display: none;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+
+  color: var(--color-heading);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.navigation a {
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.4rem;
+  left: 0;
+
+  height: 1px;
+
+  background-color: var(--color-primary);
+
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast);
+}
+
+.navigation a:hover {
+  color: var(--color-primary);
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.desktopCta {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .container {
+    min-height: 6.5rem;
+  }
+
+  .navigation {
+    display: flex;
+  }
+
+  .desktopCta {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation a,
+  .navigation a::after {
+    transition: none;
+  }
+}

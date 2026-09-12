@@ -1,0 +1,168 @@
+.section {
+  padding-block: 2.75rem;
+  background-color: var(--color-background);
+  border-top: 1px solid rgba(21, 100, 107, 0.08);
+  border-bottom: 1px solid rgba(21, 100, 107, 0.08);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.avatar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: hidden;
+
+  color: var(--color-primary);
+  background-color: rgba(150, 217, 215, 0.3);
+
+  border-radius: 50%;
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.content {
+  max-width: 36rem;
+}
+
+.quote {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.author {
+  margin-top: 0.5rem;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+
+  color: var(--color-heading);
+  background: transparent;
+
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.control:hover {
+  background-color: rgba(21, 100, 107, 0.06);
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.dots span {
+  width: 0.4rem;
+  height: 0.4rem;
+
+  background-color: rgba(21, 100, 107, 0.25);
+
+  border-radius: 50%;
+}
+
+.dots .activeDot {
+  background-color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .container {
+    grid-template-columns:
+      minmax(10rem, 0.65fr)
+      minmax(0, 2.4fr)
+      auto;
+
+    column-gap: clamp(2rem, 4vw, 4rem);
+    row-gap: 0.75rem;
+  }
+
+  .title {
+    align-self: center;
+  }
+
+  .testimonial {
+    min-width: 0;
+  }
+
+  .controls {
+    justify-content: flex-end;
+  }
+
+  .dots {
+    grid-column: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control {
+    transition: none;
+  }
+}
