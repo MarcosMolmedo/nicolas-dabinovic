@@ -1,20 +1,29 @@
 .hero {
   position: relative;
   overflow: hidden;
+
   background-color: var(--color-background);
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  padding-block: 3rem 5rem;
+  gap: 2.5rem;
+
+  padding-block: 3rem 4rem;
 }
+
+/* =========================
+   CONTENT
+   ========================= */
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -30,24 +39,27 @@
 }
 
 .title {
+  margin: 0;
+
   color: var(--color-heading);
 
   font-family: var(--font-heading), serif;
-  font-size: clamp(4.5rem, 15vw, 7rem);
+  font-size: clamp(4rem, 16vw, 6rem);
   font-weight: 500;
-  line-height: 0.78;
+  line-height: 0.82;
   letter-spacing: -0.055em;
 }
 
 .description {
-  max-width: 26rem;
+  max-width: 28rem;
+
   margin-top: 2rem;
   margin-bottom: 2rem;
 
   color: var(--color-text);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -57,12 +69,18 @@
   color: var(--color-text);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
+/* =========================
+   VIDEO
+   ========================= */
+
 .media {
   width: 100%;
+  min-width: 0;
 }
 
 .videoPlaceholder {
@@ -72,10 +90,10 @@
   align-items: flex-end;
 
   width: 100%;
-  min-height: 32rem;
+  min-height: 27rem;
   overflow: hidden;
 
-  padding: 1.75rem;
+  padding: 1.5rem;
 
   background:
     linear-gradient(
@@ -97,8 +115,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
 
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.2);
@@ -128,33 +146,58 @@
 }
 
 .videoText strong {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .videoText span {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   opacity: 0.85;
 }
+
+/* =========================
+   SIDE CONTENT
+   MOBILE
+   ========================= */
 
 .side {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1.25rem;
+
+  width: 100%;
+  min-width: 0;
 }
 
 .keywords {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 0.4rem 0.75rem;
 
   color: var(--color-heading);
 
   font-family: var(--font-body), sans-serif;
-  font-size: clamp(1.75rem, 5vw, 2.6rem);
-  font-weight: 300;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
+}
+
+.keywords span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.keywords span:not(:last-child)::after {
+  margin-left: 0.75rem;
+
+  color: var(--color-primary);
+
+  content: '·';
 }
 
 .keywords span:nth-child(2) {
@@ -162,19 +205,65 @@
 }
 
 .sidePhrase {
-  margin-top: 3rem;
+  max-width: 100%;
+  margin: 0;
 
   color: var(--color-primary);
 
   font-family: var(--font-heading), serif;
-  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 8vw, 2.8rem);
   font-style: italic;
   font-weight: 500;
-  line-height: 0.9;
+  line-height: 0.95;
 
-  transform: rotate(-4deg);
-  transform-origin: left center;
+  transform: none;
 }
+
+/* =========================
+   SMALL TABLET
+   ========================= */
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    gap: 2rem;
+
+    padding-block: 3rem 4rem;
+  }
+
+  .content {
+    max-width: 34rem;
+  }
+
+  .title {
+    font-size: clamp(4.5rem, 11vw, 6rem);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .videoPlaceholder {
+    min-height: 30rem;
+  }
+
+  .side {
+    gap: 1rem;
+  }
+
+  .keywords {
+    flex-wrap: nowrap;
+
+    font-size: 1.25rem;
+  }
+
+  .sidePhrase {
+    font-size: 2.6rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+   ========================= */
 
 @media (min-width: 900px) {
   .container {
@@ -184,9 +273,11 @@
       minmax(11rem, 0.55fr);
 
     align-items: center;
+
     gap: clamp(2.5rem, 5vw, 5.5rem);
 
     min-height: calc(100svh - 6.5rem);
+
     padding-block: 2.5rem 4rem;
   }
 
@@ -194,24 +285,69 @@
     font-size: clamp(5rem, 7vw, 7.5rem);
   }
 
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .note {
+    font-size: 0.65rem;
+  }
+
   .videoPlaceholder {
     min-height: min(68vh, 44rem);
+
+    padding: 1.75rem;
+  }
+
+  .videoText strong {
+    font-size: 0.85rem;
+  }
+
+  .videoText span {
+    font-size: 0.7rem;
   }
 
   .side {
     align-self: stretch;
+
+    justify-content: space-between;
+
     padding-block: 5rem 4rem;
   }
 
   .keywords {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    gap: 0;
+
     font-size: clamp(1.5rem, 2.3vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+
+  .keywords span:not(:last-child)::after {
+    display: none;
   }
 
   .sidePhrase {
+    max-width: 11rem;
+
     margin-top: auto;
+
     font-size: clamp(2.25rem, 3.4vw, 3.75rem);
+    line-height: 0.9;
+
+    transform: rotate(-4deg);
+    transform-origin: left center;
   }
 }
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
 
 @media (prefers-reduced-motion: reduce) {
   .sidePhrase {

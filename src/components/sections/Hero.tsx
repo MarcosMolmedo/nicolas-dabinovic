@@ -1,7 +1,12 @@
 import { Play } from 'lucide-react';
+
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
+
 import styles from './Hero.module.css';
+
+const CONTACT_URL =
+  'https://nicodabicoaching.taplink.site/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAUVCHpwZG9mAmZkaWQWUOYcHC0OTFxHrBk4hXhzCjIiWS5fPGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABpwroU2wVubaBrLzyL_S2JSqnEsqddKfIAzWfJpA2XsfaQTlYQMSCIL1OCjWB_aem_rn91BUAlCUAHfhUR3EdMeQ';
 
 export default function Hero() {
   return (
@@ -12,7 +17,8 @@ export default function Hero() {
 
           <h1 className={styles.title}>
             Volver
-            <br />a vos.
+            <br />
+            a vos.
           </h1>
 
           <p className={styles.description}>
@@ -21,9 +27,17 @@ export default function Hero() {
             Recuperá tu voz, tus límites y tu dirección.
           </p>
 
-          <Button href="#programa">Agendar llamada gratis →</Button>
+          <Button
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agendar llamada gratis →
+          </Button>
 
-          <p className={styles.note}>Sin compromiso · Online · 30 minutos</p>
+          <p className={styles.note}>
+            Sin compromiso · Online · 30 minutos
+          </p>
         </div>
 
         <div className={styles.media}>
@@ -47,11 +61,7 @@ export default function Hero() {
           </div>
 
           <p className={styles.sidePhrase}>
-            Más
-            <br />
-            dirección.
-            <br />
-            Más vida.
+            Más dirección. Más vida.
           </p>
         </aside>
       </Container>

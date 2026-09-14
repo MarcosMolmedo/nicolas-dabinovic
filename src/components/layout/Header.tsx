@@ -8,6 +8,9 @@ import Button from '@/components/ui/Button';
 
 import styles from './Header.module.css';
 
+const CONTACT_URL =
+  'https://nicodabicoaching.taplink.site/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAUVCHpwZG9mAmZkaWQWUOYcHC0OTFxHrBk4hXhzCjIiWS5fPGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABpwroU2wVubaBrLzyL_S2JSqnEsqddKfIAzWfJpA2XsfaQTlYQMSCIL1OCjWB_aem_rn91BUAlCUAHfhUR3EdMeQ';
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -55,12 +58,24 @@ export default function Header() {
           </a>
 
           <div className={styles.mobileCta}>
-            <Button href="#contacto">Agendar llamada</Button>
+            <Button
+              href={CONTACT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar llamada
+            </Button>
           </div>
         </nav>
 
         <div className={styles.desktopCta}>
-          <Button href="#contacto">Agendar llamada</Button>
+          <Button
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agendar llamada
+          </Button>
         </div>
 
         <button
