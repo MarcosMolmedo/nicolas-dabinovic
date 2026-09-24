@@ -1,5 +1,7 @@
 .section {
+  scroll-margin-top: 6rem;
   padding-block: 4.5rem;
+
   background-color: var(--color-background);
 }
 
@@ -53,19 +55,82 @@
   line-height: 1.7;
 }
 
+/* =========================
+   STORY LINK
+   ========================= */
+
 .link {
-  display: inline-block;
-  margin-top: 1rem;
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 1.5rem;
+  padding: 0.8rem 0.25rem 0.7rem 0;
 
   color: var(--color-primary);
+  background: transparent;
+  border: 0;
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  animation: storyLinkReveal 600ms ease 250ms both;
+
+  transition:
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+
+  background-color: var(--color-primary);
+
+  content: '';
+
+  transform: scaleX(0.35);
+  transform-origin: left center;
+
+  transition: transform 300ms ease;
+}
+
+.link:hover {
+  transform: translateX(4px);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 5px;
+}
+
+@keyframes storyLinkReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================
-   IMAGE
+   MAIN IMAGE
    ========================= */
 
 .media {
@@ -73,34 +138,17 @@
   min-width: 0;
 }
 
-.imagePlaceholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mainImage {
+  display: block;
 
   width: 100%;
   min-height: 19rem;
-  overflow: hidden;
+  aspect-ratio: 4 / 5;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(21, 100, 107, 0.08),
-      rgba(150, 217, 215, 0.35)
-    ),
-    var(--color-white);
+  object-fit: cover;
+  object-position: center;
 
   border-radius: 0.75rem;
-}
-
-.imagePlaceholder span {
-  color: var(--color-primary);
-
-  font-family: var(--font-body), sans-serif;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 /* =========================
@@ -126,6 +174,185 @@
 }
 
 /* =========================
+   EXPANDED STORY
+   ========================= */
+
+.expandedStory {
+  margin-top: 4.5rem;
+  padding-block: 5rem;
+
+  background-color: var(--color-white);
+}
+
+.storyContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.5rem;
+}
+
+.storyIntro,
+.storyBlock {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.storyEyebrow {
+  margin: 0 0 1rem;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.storyHeading,
+.storyBlock h3 {
+  margin: 0 0 1.75rem;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(2.1rem, 7vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.storyText,
+.storyBlock {
+  color: var(--color-text);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.storyText p,
+.storyBlock p {
+  margin: 0 0 1.25rem;
+}
+
+.storyText strong,
+.storyBlock strong {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+/* =========================
+   SECOND IMAGE
+   ========================= */
+
+.storyImageWrapper {
+  width: 100%;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.storyImage {
+  display: block;
+
+  width: 100%;
+  max-height: 42rem;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 0.75rem;
+}
+
+/* =========================
+   QUESTIONS
+   ========================= */
+
+.questions {
+  margin-block: 2.5rem;
+  padding-left: clamp(1.25rem, 5vw, 3rem);
+
+  border-left: 2px solid var(--color-primary);
+}
+
+.questions p {
+  margin-bottom: 1.1rem;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.5rem, 5vw, 2.15rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* =========================
+   FINAL
+   ========================= */
+
+.storyFinal {
+  padding-top: 1rem;
+}
+
+.finalStatement {
+  margin-top: 3rem;
+  padding: clamp(2rem, 6vw, 4rem);
+
+  background-color: var(--color-primary);
+
+  border-radius: 0.5rem;
+}
+
+.finalStatement p {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.65rem, 5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.finalStatement p + p {
+  margin-top: 1rem;
+}
+
+.collapseWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.collapseButton {
+  padding: 0.9rem 1.75rem;
+
+  color: var(--color-primary);
+  background: transparent;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.collapseButton:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+
+  transform: translateY(-2px);
+}
+
+/* =========================
    TABLET
    768px — 1099px
    ========================= */
@@ -141,7 +368,6 @@
       minmax(16rem, 0.85fr);
 
     gap: 3rem;
-    align-items: center;
   }
 
   .content {
@@ -154,10 +380,9 @@
 
   .description {
     max-width: 32rem;
-    font-size: 0.95rem;
   }
 
-  .imagePlaceholder {
+  .mainImage {
     min-height: 20rem;
   }
 
@@ -175,6 +400,11 @@
     text-align: center;
 
     font-size: clamp(1.7rem, 3.5vw, 2.25rem);
+  }
+
+  .expandedStory {
+    margin-top: 5rem;
+    padding-block: 6rem;
   }
 }
 
@@ -201,7 +431,7 @@
     max-width: 28rem;
   }
 
-  .imagePlaceholder {
+  .mainImage {
     min-height: 20rem;
   }
 
@@ -215,5 +445,48 @@
     text-align: left;
 
     font-size: clamp(1.4rem, 2vw, 2rem);
+  }
+
+  .expandedStory {
+    margin-top: 4rem;
+    padding-block: 7rem;
+  }
+
+  .storyContainer {
+    gap: 6rem;
+  }
+
+  .storyIntro {
+    max-width: 52rem;
+  }
+
+  .storyHeading {
+    font-size: 3.75rem;
+  }
+
+  .storyText,
+  .storyBlock {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .collapseButton {
+    animation: none;
+    transition: none;
+  }
+
+  .link::after {
+    transition: none;
+  }
+
+  .link:hover,
+  .collapseButton:hover {
+    transform: none;
   }
 }
