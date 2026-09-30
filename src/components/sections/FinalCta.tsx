@@ -10,7 +10,7 @@ export default function FinalCta() {
     <section className={styles.section} id="contacto">
       <Container className={styles.container}>
         <h2 className={styles.title}>
-          Tu próxima versión empieza
+          El cambio empieza
           <br />
           con una conversación.
         </h2>

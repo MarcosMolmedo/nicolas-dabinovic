@@ -1,81 +1,107 @@
 .section {
-  padding-block: 4.5rem;
+  padding-block: 5rem;
+
   background-color: var(--color-white);
-  border-top: 1px solid rgba(21, 100, 107, 0.08);
-  border-bottom: 1px solid rgba(21, 100, 107, 0.08);
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3.5rem;
+  gap: 4rem;
 }
 
+/* =========================
+   INTRO
+   ========================= */
+
 .intro {
-  max-width: 30rem;
+  width: 100%;
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .title {
+  max-width: 42rem;
   margin: 0;
 
   color: var(--color-heading);
 
   font-family: var(--font-heading), serif;
-  font-size: clamp(2.6rem, 7vw, 3.75rem);
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
   font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
-.subtitle {
-  margin-top: 0.8rem;
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
 
-  color: var(--color-heading);
-
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.description {
-  max-width: 28rem;
-  margin-top: 1.5rem;
+  max-width: 40rem;
+  margin-top: 2rem;
 
   color: var(--color-text);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.82rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-.linkText {
-  margin-top: 0.65rem;
-
-  color: var(--color-primary);
-
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
+.introText p {
+  margin: 0;
 }
+
+.highlight {
+  margin-top: 0.5rem !important;
+
+  color: var(--color-heading);
+
+  font-weight: 700;
+}
+
+/* =========================
+   PROBLEMS
+   ========================= */
 
 .problems {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 .problem {
-  padding-block: 2rem;
-  border-bottom: 1px solid rgba(21, 100, 107, 0.15);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 2rem;
+
+  background-color: var(--color-background);
+  border: 1px solid rgba(21, 100, 107, 0.08);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease;
 }
 
-.problem:first-child {
-  padding-top: 0;
-}
+.problem:hover {
+  transform: translateY(-4px);
 
-.problem:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
+  border-color: rgba(21, 100, 107, 0.22);
 }
 
 .icon {
@@ -85,67 +111,138 @@
 
   width: 3rem;
   height: 3rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 
   color: var(--color-primary);
 
-  border: 1px solid var(--color-primary);
+  border: 1px solid rgba(21, 100, 107, 0.22);
   border-radius: 50%;
 }
 
 .problem h3 {
+  max-width: 18rem;
   margin: 0;
 
   color: var(--color-heading);
 
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  line-height: 1.4;
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .problem p {
-  max-width: 15rem;
-  margin-top: 0.75rem;
+  max-width: 24rem;
+  margin: 1.25rem 0 0;
 
   color: var(--color-text);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.76rem;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
+
+/* =========================
+   TABLET
+   ========================= */
 
 @media (min-width: 768px) {
   .section {
-    padding-block: 5rem;
+    padding-block: 6rem;
   }
 
   .container {
-    grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.6fr);
-    align-items: center;
-    gap: clamp(4rem, 8vw, 8rem);
+    gap: 5rem;
+  }
+
+  .intro {
+    max-width: 52rem;
+  }
+
+  .introText {
+    max-width: 43rem;
+
+    font-size: 1.05rem;
   }
 
   .problems {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .problem {
-    min-height: 12rem;
-    padding: 0 2rem;
+    padding: 2rem;
+  }
+}
 
-    border-right: 1px solid rgba(21, 100, 107, 0.15);
-    border-bottom: 0;
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media (min-width: 1100px) {
+  .section {
+    padding-block: 7rem;
   }
 
-  .problem:first-child {
-    padding-top: 0;
-    padding-left: 0;
+  .container {
+    gap: 5.5rem;
   }
 
-  .problem:last-child {
-    padding-right: 0;
-    padding-bottom: 0;
-    border-right: 0;
+  .intro {
+    display: grid;
+    grid-template-columns:
+      minmax(22rem, 1fr)
+      minmax(22rem, 0.9fr);
+    column-gap: clamp(4rem, 8vw, 8rem);
+
+    max-width: none;
+  }
+
+  .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .title {
+    grid-column: 1;
+  }
+
+  .introText {
+    grid-column: 2;
+
+    align-self: end;
+
+    margin-top: 0;
+  }
+
+  .problems {
+    gap: 1.25rem;
+  }
+
+  .problem {
+    min-height: 20rem;
+    padding: 2.5rem;
+  }
+
+  .problem h3 {
+    font-size: 2rem;
+  }
+
+  .problem p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .problem {
+    transition: none;
+  }
+
+  .problem:hover {
+    transform: none;
   }
 }

@@ -39,12 +39,53 @@ export default function Story() {
             De entenderme mucho a empezar a vivir distinto.
           </p>
 
-          <p className={styles.description}>
-            Durante años busqué respuestas en la introspección y el desarrollo
-            personal. Entendía muchas cosas sobre mí, pero seguía postergando
-            decisiones y repitiendo patrones que me alejaban de la vida que
-            quería.
-          </p>
+          <div className={styles.description}>
+            <p>
+              Durante años pensé que conocerme era la respuesta.
+            </p>
+
+            <p>
+              Leí, reflexioné, hice terapia, estudié desarrollo personal y
+              traté de entender por qué me costaba tanto poner límites, por qué
+              necesitaba tanto la aprobación de los demás y por qué terminaba
+              dejando de lado lo que yo necesitaba para que todo estuviera bien.
+            </p>
+
+            <p>
+              Y cuanto más entendía, más creía que estaba cerca de cambiar.
+            </p>
+
+            <p>
+              <strong>Pero seguía haciendo lo mismo.</strong>
+            </p>
+
+            <p>
+              Hasta que una relación que había ocupado casi toda mi vida terminó
+              de una manera que me obligó a mirarme de frente.
+            </p>
+
+            <p>
+              Ahí entendí que no se trataba solamente de superar lo que había
+              pasado.
+            </p>
+
+            <p>
+              Tenía que volver a encontrarme conmigo.
+            </p>
+
+            <p>
+              Volver a escucharme.
+              <br />
+              Volver a elegir.
+              <br />
+              Volver a construir una vida que también tuviera lugar para mí.
+            </p>
+
+            <p>
+              Ese fue el comienzo de un camino que hoy comparto con otros
+              hombres.
+            </p>
+          </div>
 
           {!storyOpen && (
             <button
@@ -61,7 +102,7 @@ export default function Story() {
         <div className={styles.media}>
           <img
             className={styles.mainImage}
-            src="/images/nicolas-historia.jpg"
+            src="/images/historia-expandida.jpg"
             alt="Nicolás Dabinovic"
           />
         </div>
@@ -69,7 +110,7 @@ export default function Story() {
         <div className={styles.quoteWrapper}>
           <blockquote className={styles.quote}>
             “Entender lo que me pasaba no fue suficiente. El cambio empezó
-            cuando dejé de postergar y empecé a actuar distinto.”
+            cuando dejé de postergar y empecé a vivir distinto.”
           </blockquote>
         </div>
       </Container>
@@ -116,7 +157,7 @@ export default function Story() {
             <div className={styles.storyImageWrapper}>
               <img
                 className={styles.storyImage}
-                src="/images/historia-expandida.jpg"
+                 src="/images/nicolas-historia.jpg"
                 alt="Nicolás Dabinovic"
               />
             </div>

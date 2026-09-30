@@ -6,8 +6,11 @@ export default function Method() {
     <section className={styles.section} id="metodo">
       <Container>
         <div className={styles.heading}>
-          <h2 className={styles.title}>Método Raíz</h2>
-          <p className={styles.subtitle}>Tres pasos. Un cambio real.</p>
+          <h2 className={styles.title}>Método RAÍZ</h2>
+
+          <p className={styles.subtitle}>
+            Un camino para volver a sentirte completo.
+          </p>
         </div>
 
         <div className={styles.steps}>
@@ -17,8 +20,9 @@ export default function Method() {
             <h3>Desaprender</h3>
 
             <p>
-              Cuestionar la historia que te hizo creer que tenías que adaptarte,
-              agradar o callarte para ser querido.
+              Cuestionar las ideas y formas de vivir que te llevaron a creer
+              que tenías que agradar, adaptarte o dejarte para después para
+              sentirte querido y suficiente.
             </p>
           </article>
 
@@ -32,8 +36,9 @@ export default function Method() {
             <h3>Desarrollar</h3>
 
             <p>
-              Aprender a sostener emociones difíciles, recuperar tu voz y
-              responder de una manera diferente.
+              Aprender a reconocer lo que pasa dentro tuyo, atravesar emociones
+              difíciles y construir nuevas formas de responder sin volver a
+              los patrones de siempre.
             </p>
           </article>
 
@@ -47,8 +52,9 @@ export default function Method() {
             <h3>Integrar</h3>
 
             <p>
-              Llevar lo aprendido a tus vínculos y decisiones hasta que elegirte
-              deje de ser una excepción.
+              Llevar ese cambio a tu vida real: a tus vínculos, tus decisiones
+              y tu día a día, hasta que vivir desde vos mismo deje de sentirse
+              extraño y empiece a sentirse natural.
             </p>
           </article>
         </div>

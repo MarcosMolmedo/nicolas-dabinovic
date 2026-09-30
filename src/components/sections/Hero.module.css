@@ -27,7 +27,7 @@
 }
 
 .eyebrow {
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
 
   color: var(--color-primary);
 
@@ -44,9 +44,9 @@
   color: var(--color-heading);
 
   font-family: var(--font-heading), serif;
-  font-size: clamp(4rem, 16vw, 6rem);
+  font-size: clamp(3.7rem, 15vw, 6rem);
   font-weight: 500;
-  line-height: 0.82;
+  line-height: 0.84;
   letter-spacing: -0.055em;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .note {
-  margin-top: 0.85rem;
+  margin: 0.85rem 0 0;
 
   color: var(--color-text);
 
@@ -83,76 +83,69 @@
   min-width: 0;
 }
 
-.videoPlaceholder {
+.videoWrapper {
   position: relative;
-
-  display: flex;
-  align-items: flex-end;
 
   width: 100%;
-  min-height: 27rem;
   overflow: hidden;
 
-  padding: 1.5rem;
+  background-color: #000;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(21, 100, 107, 0.02) 0%,
-      rgba(21, 100, 107, 0.15) 100%
-    ),
-    linear-gradient(145deg, #cbe8e7, #94cfcd);
-
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
 }
 
-.playButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.video {
+  display: block;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: auto;
 
-  width: 4.5rem;
-  height: 4.5rem;
+  max-height: 44rem;
 
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.2);
+  object-fit: cover;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(4px);
+  background-color: #000;
 }
 
-.playButton svg {
-  margin-left: 0.2rem;
-}
+/* =========================
+   VIDEO MESSAGE
+   ========================= */
 
 .videoText {
-  position: relative;
-  z-index: 1;
-
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
+  gap: 0.5rem;
 
-  color: var(--color-white);
+  width: 100%;
+
+  margin-top: 1.5rem;
+  padding-inline: 1rem;
+
+  text-align: center;
 
   font-family: var(--font-body), sans-serif;
 }
 
 .videoText strong {
-  font-size: 0.9rem;
-  font-weight: 700;
+  max-width: 32rem;
+
+  color: var(--color-heading);
+
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .videoText span {
-  font-size: 0.78rem;
-  opacity: 0.85;
+  max-width: 30rem;
+
+  color: var(--color-text);
+
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 /* =========================
@@ -163,7 +156,7 @@
 .side {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 
   width: 100%;
   min-width: 0;
@@ -206,6 +199,7 @@
 
 .sidePhrase {
   max-width: 100%;
+
   margin: 0;
 
   color: var(--color-primary);
@@ -221,33 +215,46 @@
 
 /* =========================
    SMALL TABLET
+   600px - 899px
    ========================= */
 
 @media (min-width: 600px) and (max-width: 899px) {
   .container {
-    gap: 2rem;
+    gap: 2.5rem;
 
-    padding-block: 3rem 4rem;
+    padding-block: 3rem 4.5rem;
   }
 
   .content {
-    max-width: 34rem;
+    max-width: 38rem;
   }
 
   .title {
-    font-size: clamp(4.5rem, 11vw, 6rem);
+    font-size: clamp(4.5rem, 10vw, 6rem);
   }
 
   .description {
     font-size: 1rem;
   }
 
-  .videoPlaceholder {
-    min-height: 30rem;
+  .videoWrapper {
+    max-width: 100%;
+  }
+
+  .videoText {
+    margin-top: 1.75rem;
+  }
+
+  .videoText strong {
+    font-size: clamp(1.65rem, 3.5vw, 2rem);
+  }
+
+  .videoText span {
+    font-size: 0.95rem;
   }
 
   .side {
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .keywords {
@@ -263,6 +270,7 @@
 
 /* =========================
    DESKTOP
+   900px+
    ========================= */
 
 @media (min-width: 900px) {
@@ -282,29 +290,43 @@
   }
 
   .title {
-    font-size: clamp(5rem, 7vw, 7.5rem);
+    font-size: clamp(4.5rem, 6.2vw, 7rem);
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .note {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
   }
 
-  .videoPlaceholder {
-    min-height: min(68vh, 44rem);
+  .videoWrapper {
+    max-height: min(68vh, 44rem);
+  }
 
-    padding: 1.75rem;
+  .video {
+    width: 100%;
+    max-height: min(68vh, 44rem);
+
+    object-fit: cover;
+  }
+
+  .videoText {
+    margin-top: 1.5rem;
+    padding-inline: 0.5rem;
   }
 
   .videoText strong {
-    font-size: 0.85rem;
+    max-width: 32rem;
+
+    font-size: clamp(1.45rem, 1.8vw, 1.9rem);
   }
 
   .videoText span {
-    font-size: 0.7rem;
+    max-width: 28rem;
+
+    font-size: 0.88rem;
   }
 
   .side {
@@ -333,15 +355,33 @@
   }
 
   .sidePhrase {
-    max-width: 11rem;
+    max-width: 13rem;
 
     margin-top: auto;
 
-    font-size: clamp(2.25rem, 3.4vw, 3.75rem);
-    line-height: 0.9;
+    font-size: clamp(2.1rem, 3vw, 3.4rem);
+    line-height: 0.95;
 
     transform: rotate(-4deg);
     transform-origin: left center;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+   ========================= */
+
+@media (min-width: 1200px) {
+  .videoText {
+    margin-top: 1.75rem;
+  }
+
+  .videoText strong {
+    font-size: 1.8rem;
+  }
+
+  .videoText span {
+    font-size: 0.9rem;
   }
 }
 

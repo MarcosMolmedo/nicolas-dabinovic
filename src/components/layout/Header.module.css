@@ -7,17 +7,24 @@
 
 .container {
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   min-height: 5.5rem;
   gap: 2rem;
 }
+
+/* =========================
+   LOGO
+   ========================= */
 
 .logo {
   display: inline-flex;
   flex-direction: column;
   flex-shrink: 0;
+
   color: var(--color-heading);
   line-height: 0.8;
 }
@@ -34,14 +41,17 @@
 
 .logoSurname {
   margin-top: 0.25rem;
-  font-size: 0.75rem;
+
   font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-/* MOBILE / TABLET */
+/* =========================
+   MOBILE / TABLET
+   ========================= */
 
 .navigation {
   position: absolute;
@@ -75,11 +85,15 @@
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+
   transform: translateY(0);
 }
 
-.navigation a {
+/* Links normales del menú */
+
+.navigation > a {
   position: relative;
+
   padding: 0.9rem 0;
 
   color: var(--color-heading);
@@ -89,9 +103,13 @@
   font-weight: 500;
 }
 
-.navigation a::after {
+.navigation > a::after {
   display: none;
 }
+
+/* =========================
+   CTA MOBILE
+   ========================= */
 
 .mobileCta {
   margin-top: 1rem;
@@ -99,7 +117,21 @@
 
 .mobileCta a {
   width: 100%;
+
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
+
+/* Evitamos que los estilos de los links
+   normales del menú modifiquen el botón */
+
+.mobileCta a::after {
+  display: none;
+}
+
+/* =========================
+   BOTÓN HAMBURGUESA
+   ========================= */
 
 .menuButton {
   display: inline-flex;
@@ -124,11 +156,15 @@
   stroke-width: 1.5;
 }
 
+/* CTA de escritorio oculto en móvil */
+
 .desktopCta {
   display: none;
 }
 
-/* DESKTOP */
+/* =========================
+   DESKTOP
+   ========================= */
 
 @media (min-width: 900px) {
   .container {
@@ -161,12 +197,17 @@
     font-weight: 500;
   }
 
-  .navigation a {
+  .navigation > a {
+    position: relative;
+
     padding: 0;
+
+    color: var(--color-heading);
+
     font-size: inherit;
   }
 
-  .navigation a::after {
+  .navigation > a::after {
     position: absolute;
     right: 0;
     bottom: -0.4rem;
@@ -186,11 +227,11 @@
     transition: transform var(--transition-fast);
   }
 
-  .navigation a:hover {
+  .navigation > a:hover {
     color: var(--color-primary);
   }
 
-  .navigation a:hover::after {
+  .navigation > a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -205,10 +246,14 @@
   }
 }
 
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
 @media (prefers-reduced-motion: reduce) {
   .navigation,
-  .navigation a,
-  .navigation a::after {
+  .navigation > a,
+  .navigation > a::after {
     transition: none;
   }
 }

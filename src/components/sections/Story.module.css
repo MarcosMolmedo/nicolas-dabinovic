@@ -54,6 +54,18 @@
   font-size: 0.95rem;
   line-height: 1.7;
 }
+.description p {
+  margin: 0 0 1rem;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.description strong {
+  color: var(--color-heading);
+  font-weight: 700;
+}
 
 /* =========================
    STORY LINK

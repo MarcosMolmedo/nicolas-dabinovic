@@ -53,9 +53,13 @@ export default function Header() {
             Testimonios
           </a>
 
-          <a href="#faq" onClick={closeMenu}>
-            FAQ
-          </a>
+          <a href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+             onClick={closeMenu}
+>            Contacto
+         </a>
+          
 
           <div className={styles.mobileCta}>
             <Button
