@@ -33,7 +33,7 @@ export default function Method() {
           <article className={styles.step}>
             <span className={styles.number}>02</span>
 
-            <h3>Desarrollar</h3>
+            <h3>Reconectar</h3>
 
             <p>
               Aprender a reconocer lo que pasa dentro tuyo, atravesar emociones

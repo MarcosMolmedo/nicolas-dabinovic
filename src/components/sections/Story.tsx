@@ -41,49 +41,19 @@ export default function Story() {
 
           <div className={styles.description}>
             <p>
-              Durante años pensé que conocerme era la respuesta.
+              Durante años busqué respuestas en la terapia, el desarrollo
+              personal y la introspección. Entendía cada vez más sobre mí,
+              pero seguía repitiendo los mismos patrones.
             </p>
 
             <p>
-              Leí, reflexioné, hice terapia, estudié desarrollo personal y
-              traté de entender por qué me costaba tanto poner límites, por qué
-              necesitaba tanto la aprobación de los demás y por qué terminaba
-              dejando de lado lo que yo necesitaba para que todo estuviera bien.
+              Hasta que una relación que había ocupado casi toda mi vida
+              terminó y me obligó a mirarme de frente.
             </p>
 
             <p>
-              Y cuanto más entendía, más creía que estaba cerca de cambiar.
-            </p>
-
-            <p>
-              <strong>Pero seguía haciendo lo mismo.</strong>
-            </p>
-
-            <p>
-              Hasta que una relación que había ocupado casi toda mi vida terminó
-              de una manera que me obligó a mirarme de frente.
-            </p>
-
-            <p>
-              Ahí entendí que no se trataba solamente de superar lo que había
-              pasado.
-            </p>
-
-            <p>
-              Tenía que volver a encontrarme conmigo.
-            </p>
-
-            <p>
-              Volver a escucharme.
-              <br />
-              Volver a elegir.
-              <br />
-              Volver a construir una vida que también tuviera lugar para mí.
-            </p>
-
-            <p>
-              Ese fue el comienzo de un camino que hoy comparto con otros
-              hombres.
+              Ahí empezó un camino de volver a escucharme, elegirme y
+              construir una vida que realmente sintiera mía.
             </p>
           </div>
 
@@ -118,49 +88,60 @@ export default function Story() {
       {storyOpen && (
         <div className={styles.expandedStory}>
           <Container className={styles.storyContainer}>
-            <div className={styles.storyIntro}>
-              <p className={styles.storyEyebrow}>Mi historia</p>
 
-              <h3 className={styles.storyHeading}>
-                Durante mucho tiempo pensé que estaba haciendo las cosas bien.
-              </h3>
+            {/* =========================
+                PRIMER BLOQUE + FOTO
+                ========================= */}
 
-              <div className={styles.storyText}>
-                <p>
-                  Me esforzaba por ser un buen hombre, una buena pareja y
-                  cumplir con todo lo que se esperaba de mí.
-                </p>
+            <div className={styles.storyHero}>
+              <div className={styles.storyIntro}>
+                <p className={styles.storyEyebrow}>Mi historia</p>
 
-                <p>
-                  Trabajaba, resolvía problemas, cuidaba a los demás y trataba
-                  de que todos estuvieran bien.
-                </p>
+                <h3 className={styles.storyHeading}>
+                  Durante mucho tiempo pensé que estaba haciendo las cosas bien.
+                </h3>
 
-                <p>Por afuera, mi vida funcionaba.</p>
+                <div className={styles.storyText}>
+                  <p>
+                    Me esforzaba por ser un buen hombre, una buena pareja y
+                    cumplir con todo lo que se esperaba de mí.
+                  </p>
 
-                <p>
-                  <strong>
-                    Pero por dentro cada vez me sentía más cansado, más apagado
-                    y más vacío.
-                  </strong>
-                </p>
+                  <p>
+                    Trabajaba, resolvía problemas, cuidaba a los demás y
+                    trataba de que todos estuvieran bien.
+                  </p>
 
-                <p>
-                  Había sueños y cosas que quería hacer que siempre quedaban
-                  para “algún día”.
-                </p>
+                  <p>Por afuera, mi vida funcionaba.</p>
 
-                <p>Y ese día nunca llegaba.</p>
+                  <p>
+                    <strong>
+                      Pero por dentro cada vez me sentía más cansado, más
+                      apagado y más vacío.
+                    </strong>
+                  </p>
+
+                  <p>
+                    Había sueños y cosas que quería hacer que siempre quedaban
+                    para “algún día”.
+                  </p>
+
+                  <p>Y ese día nunca llegaba.</p>
+                </div>
+              </div>
+
+              <div className={styles.storyImageWrapper}>
+                <img
+                  className={styles.storyImage}
+                  src="/images/nicolas-historia.jpg"
+                  alt="Nicolás Dabinovic"
+                />
               </div>
             </div>
 
-            <div className={styles.storyImageWrapper}>
-              <img
-                className={styles.storyImage}
-                 src="/images/nicolas-historia.jpg"
-                alt="Nicolás Dabinovic"
-              />
-            </div>
+            {/* =========================
+                RESTO DE LA HISTORIA
+                ========================= */}
 
             <div className={styles.storyBlock}>
               <h3>Entonces empecé a buscar respuestas.</h3>
@@ -269,8 +250,8 @@ export default function Story() {
               </p>
 
               <p>
-                Y justamente porque sé lo que se siente estar ahí, hoy acompaño
-                a otros hombres que están atravesando ese mismo lugar.
+                Y justamente porque sé lo que se siente estar ahí, hoy
+                acompaño a otros hombres que están atravesando ese mismo lugar.
               </p>
 
               <p>
@@ -278,9 +259,9 @@ export default function Story() {
               </p>
 
               <p>
-                Un proceso para dejar de vivir desconectado de vos mismo, sanar
-                aquello que te frena y recuperar la dirección de tu propia
-                vida.
+                Un proceso para dejar de vivir desconectado de vos mismo,
+                sanar aquello que te frena y recuperar la dirección de tu
+                propia vida.
               </p>
 
               <div className={styles.finalStatement}>

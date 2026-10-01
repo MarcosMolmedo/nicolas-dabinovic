@@ -54,6 +54,7 @@
   font-size: 0.95rem;
   line-height: 1.7;
 }
+
 .description p {
   margin: 0 0 1rem;
 }
@@ -146,6 +147,9 @@
    ========================= */
 
 .media {
+  display: flex;
+  justify-content: center;
+
   width: 100%;
   min-width: 0;
 }
@@ -153,8 +157,10 @@
 .mainImage {
   display: block;
 
-  width: 100%;
-  min-height: 19rem;
+  width: 82%;
+  max-width: 20rem;
+  height: auto;
+
   aspect-ratio: 4 / 5;
 
   object-fit: cover;
@@ -170,6 +176,7 @@
 .quoteWrapper {
   display: flex;
   align-items: center;
+
   min-width: 0;
 }
 
@@ -197,16 +204,29 @@
 }
 
 .storyContainer {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 4.5rem;
 }
 
-.storyIntro,
-.storyBlock {
+/* =========================
+   STORY HERO
+   MOBILE FIRST
+   ========================= */
+
+.storyHero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
   width: 100%;
   max-width: 46rem;
+
   margin-inline: auto;
+}
+
+.storyIntro {
+  width: 100%;
 }
 
 .storyEyebrow {
@@ -248,6 +268,11 @@
   margin: 0 0 1.25rem;
 }
 
+.storyText p:last-child,
+.storyBlock p:last-child {
+  margin-bottom: 0;
+}
+
 .storyText strong,
 .storyBlock strong {
   color: var(--color-heading);
@@ -255,25 +280,38 @@
 }
 
 /* =========================
-   SECOND IMAGE
+   EXPANDED STORY IMAGE
+   MOBILE
    ========================= */
 
 .storyImageWrapper {
+  display: flex;
+  justify-content: center;
+
   width: 100%;
-  max-width: 56rem;
-  margin-inline: auto;
 }
 
 .storyImage {
   display: block;
 
-  width: 100%;
-  max-height: 42rem;
+  width: min(100%, 18rem);
+  height: auto;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 
   border-radius: 0.75rem;
+}
+
+/* =========================
+   STORY BLOCKS
+   ========================= */
+
+.storyBlock {
+  width: 100%;
+  max-width: 46rem;
+
+  margin-inline: auto;
 }
 
 /* =========================
@@ -330,6 +368,10 @@
 .finalStatement p + p {
   margin-top: 1rem;
 }
+
+/* =========================
+   COLLAPSE
+   ========================= */
 
 .collapseWrapper {
   display: flex;
@@ -394,7 +436,13 @@
     max-width: 32rem;
   }
 
+  .media {
+    display: block;
+  }
+
   .mainImage {
+    width: 100%;
+    max-width: none;
     min-height: 20rem;
   }
 
@@ -402,6 +450,7 @@
     grid-column: 1 / -1;
 
     justify-content: center;
+
     padding-top: 1rem;
   }
 
@@ -417,6 +466,10 @@
   .expandedStory {
     margin-top: 5rem;
     padding-block: 6rem;
+  }
+
+  .storyImage {
+    width: min(100%, 20rem);
   }
 }
 
@@ -443,7 +496,13 @@
     max-width: 28rem;
   }
 
+  .media {
+    display: block;
+  }
+
   .mainImage {
+    width: 100%;
+    max-width: none;
     min-height: 20rem;
   }
 
@@ -459,6 +518,10 @@
     font-size: clamp(1.4rem, 2vw, 2rem);
   }
 
+  /* =========================
+     EXPANDED DESKTOP
+     ========================= */
+
   .expandedStory {
     margin-top: 4rem;
     padding-block: 7rem;
@@ -468,16 +531,73 @@
     gap: 6rem;
   }
 
+  /*
+   * ESTE es el bloque importante:
+   * texto izquierda + foto derecha.
+   */
+
+  .storyHero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      20rem;
+
+    gap: clamp(3.5rem, 6vw, 6rem);
+    align-items: center;
+
+    width: 100%;
+    max-width: 68rem;
+
+    margin-inline: auto;
+  }
+
   .storyIntro {
-    max-width: 52rem;
+    min-width: 0;
   }
 
   .storyHeading {
-    font-size: 3.75rem;
+    max-width: 13ch;
+
+    font-size: clamp(3rem, 4vw, 3.75rem);
   }
 
-  .storyText,
+  .storyText {
+    max-width: 38rem;
+
+    font-size: 1.05rem;
+  }
+
+  /*
+   * FOTO A LA DERECHA.
+   * Pequeña, vertical y completa.
+   */
+
+  .storyImageWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .storyImage {
+    width: 55rem;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 0.75rem;
+  }
+
+  /*
+   * Los bloques siguientes vuelven
+   * a la columna editorial central.
+   */
+
   .storyBlock {
+    max-width: 46rem;
+
     font-size: 1.05rem;
   }
 }

@@ -29,9 +29,13 @@ export default function Program() {
   return (
     <section className={styles.section} id="programa">
       <Container className={styles.container}>
-        <div className={styles.imagePlaceholder}>
-          <span>Imagen</span>
-        </div>
+      <div className={styles.imageWrapper}>
+  <img
+    className={styles.image}
+    src="/images/Nico-programa.jpeg"
+    alt="Nicolás Dabinovic"
+  />
+</div>
 
         <div className={styles.program} ref={programRef}>
           <h2 className={styles.title}>El programa</h2>
@@ -86,8 +90,7 @@ export default function Program() {
               <p className={styles.processEyebrow}>El programa</p>
 
               <h3 className={styles.processTitle}>
-                12 semanas de acompañamiento para trabajar en vos y llevar el
-                cambio a tu vida real.
+                12 semanas de transformación
               </h3>
             </div>
 
@@ -327,20 +330,7 @@ export default function Program() {
             </ul>
           </div>
 
-          <div className={styles.audienceClosing}>
-            <p className={styles.audienceStatement}>
-              El cambio empieza cuando dejás de esperar que algo afuera cambie
-              para empezar a hacerte cargo de lo que sí está en tus manos.
-            </p>
-
-            <p className={styles.audienceFinal}>
-              No necesitás tener todo resuelto para empezar.
-              <br />
-              <strong>
-                Pero sí necesitás estar dispuesto a hacer tu parte.
-              </strong>
-            </p>
-          </div>
+      
         </div>
       </Container>
     </section>

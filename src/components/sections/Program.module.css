@@ -402,45 +402,6 @@
   transform: translateY(-2px);
 }
 
-/* =========================
-   AUDIENCE CLOSING
-   ========================= */
-
-.audienceClosing {
-  max-width: 48rem;
-
-  margin-top: 4.5rem;
-  padding-top: 2.75rem;
-
-  border-top: 1px solid rgba(21, 100, 107, 0.18);
-}
-
-.audienceStatement {
-  margin: 0;
-
-  color: var(--color-heading);
-
-  font-family: var(--font-heading), serif;
-  font-size: clamp(1.5rem, 4vw, 2.15rem);
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-}
-
-.audienceFinal {
-  margin: 1.75rem 0 0;
-
-  color: var(--color-text);
-
-  font-family: var(--font-body), sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.audienceFinal strong {
-  color: var(--color-heading);
-  font-weight: 700;
-}
 
 /* =========================
    TABLET
