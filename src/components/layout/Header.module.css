@@ -35,7 +35,7 @@
 }
 
 .logoName {
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   font-weight: 500;
 }
 
@@ -94,12 +94,12 @@
 .navigation > a {
   position: relative;
 
-  padding: 0.9rem 0;
+  padding: 1rem 0;
 
   color: var(--color-heading);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -171,6 +171,14 @@
     min-height: 6.5rem;
   }
 
+  .logoName {
+    font-size: 1.9rem;
+  }
+
+  .logoSurname {
+    font-size: 0.78rem;
+  }
+
   .navigation {
     position: static;
 
@@ -193,7 +201,7 @@
     color: var(--color-heading);
 
     font-family: var(--font-body), sans-serif;
-    font-size: var(--text-sm);
+    font-size: 1.7rem;
     font-weight: 500;
   }
 

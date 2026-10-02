@@ -34,7 +34,7 @@
   color: var(--color-text);
 
   font-family: var(--font-body), sans-serif;
-  font-size: 0.72rem;
+  font-size: 1.7rem;
 
   transition: opacity 180ms ease;
 }
@@ -60,6 +60,11 @@
   transition:
     transform 180ms ease,
     opacity 180ms ease;
+}
+
+.socials svg {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .socials a:hover {
