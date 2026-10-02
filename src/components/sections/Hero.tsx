@@ -4,8 +4,9 @@ import Container from '@/components/ui/Container';
 import styles from './Hero.module.css';
 
 const CONTACT_URL =
-  'https://nicodabicoaching.taplink.site/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZnRzaAUVCHpwZG9mAmZkaWQWUOYcHC0OTFxHrBk4hXhzCjIiWS5fPGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABpwroU2wVubaBrLzyL_S2JSqnEsqddKfIAzWfJpA2XsfaQTlYQMSCIL1OCjWB_aem_rn91BUAlCUAHfhUR3EdMeQ';
+  'https://calendly.com/nicodabicoaching/sesion-de-claridad-1-1-gratuita?month=2026-10';
 
+  
 export default function Hero() {
   return (
     <section className={styles.hero}>
