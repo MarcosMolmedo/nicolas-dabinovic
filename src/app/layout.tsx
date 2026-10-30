@@ -23,10 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     'Un proceso de transformación personal para comprender tus patrones, recuperar dirección y generar cambios reales.',
- icons: {
-  icon: '/images/Logotipo.png',
-  apple: '/images/Logotipo.png',
-},
+
 };
 
 export default function RootLayout({
