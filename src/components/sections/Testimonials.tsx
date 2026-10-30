@@ -35,7 +35,7 @@ const testimonials = [
 {
   quote:
     'Trabajar con Nico fue una de las experiencias más transformadoras de mi vida, y eso que llevo años haciendo terapia. Nico tiene una capacidad increíble para entender la complejidad de mi mundo interior. En esos momentos en que las palabras no alcanzan para explicar una situación o lo que estoy sintiendo, él logra ver todo lo que quiero transmitir detrás de ellas. Tiene el don de llevar esa complejidad a un lugar más simple. Hablando con él me siento vista, aceptada, entendida y acompañada hacia una versión más completa de mí. Y eso no me pasa con cualquiera. Su trabajo llega muy profundo. Es un ser conectado, lleno de amor, pero también directo y tajante cuando hace falta, de la mejor manera posible. No tengo más que agradecimiento para él.',
-  author: 'Valentina de Altamirano',
+  author: 'Valentina Altamirano',
   image: null,
   emoji: '👩',
 },
