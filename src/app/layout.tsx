@@ -1,6 +1,8 @@
+
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
+
 
 const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
@@ -21,6 +23,10 @@ export const metadata: Metadata = {
   },
   description:
     'Un proceso de transformación personal para comprender tus patrones, recuperar dirección y generar cambios reales.',
+ icons: {
+  icon: '/images/Logotipo.png',
+  apple: '/images/Logotipo.png',
+},
 };
 
 export default function RootLayout({
